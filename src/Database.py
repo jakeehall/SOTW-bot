@@ -72,7 +72,7 @@ class Database:
     def getSongOfTheWeekNumber(self):
         # Get SOTW number from max SOTW enrty in History
         cursor = self.conn.execute("SELECT MAX(SOTW) FROM History;")
-        return str(cursor.fetchone()[0])
+        return cursor.fetchone()[0]
 
 
     def __del__(self):
