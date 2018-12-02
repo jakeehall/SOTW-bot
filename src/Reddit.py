@@ -1,25 +1,25 @@
-from Settings import RedditBot as rbot #Reddit Bot Settings
 import praw #Reddit Wrapper
 
 class Reddit:
-    def __init__(self, VERSION):
+    def __init__(self, Settings, VERSION):
+        self.rbot = Settings
         self.VERSION = VERSION
         # Auth Bot with Reddit
-        reddit = praw.Reddit(client_id = rbot.client_id,
-                             client_secret = rbot.client_secret,
+        reddit = praw.Reddit(client_id = self.rbot.client_id,
+                             client_secret = self.rbot.client_secret,
                              user_agent = "SOTW-bot v"+self.VERSION,
-                             username = rbot.username,
-                             password = rbot.password)
+                             username = self.rbot.username,
+                             password = self.rbot.password)
         # Set the Subreddit
-        self.subreddit = reddit.subreddit(rbot.subreddit)
+        self.subreddit = reddit.subreddit(self.rbot.subreddit)
 
 
     def post(self, SOTWNumber, song):
         # Print posting message
-        print("Posting to r/"+rbot.subreddit+"...")
+        print("Posting to r/"+self.rbot.subreddit+"...")
 
         # Create Post
-        #imgURL = "https://i.redd.it/hpeqoarknq7y.jpg"
+        print("Creating Post")
         #post = subreddit.submit('\"'+title+'\"', url=imgURL)
         post = self.subreddit.submit('\"'+song.title+'\" - '+song.artist, selftext="")
 
@@ -27,8 +27,9 @@ class Reddit:
         post.mod.distinguish(how='yes')
         post.mod.approve()
         post.mod.sticky(state=True, bottom=False)
-        post.mod.flair(text='SOTW #' + SOTWNumber, css_class=rbot.flairCSS)
+        post.mod.flair(text='SOTW #' + SOTWNumber, css_class=self.rbot.flairCSS)
 
+        print("Creating Comment")
         # Comment a Stickied Post with Moderator Distinction
         description =   "||SOTW #"+SOTWNumber+"|\n" + \
                         "|:-|:-|\n" + \
