@@ -1,6 +1,6 @@
 # Hidden Files
 Settings.*
-database.db*
+DB.db*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
