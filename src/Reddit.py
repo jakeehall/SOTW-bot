@@ -41,6 +41,7 @@ class Reddit:
                         song.quote+"\n\n" + \
                         "Credits:\n" + \
                         song.credits+"\n\n" + \
+                        "#[Get the iOS Shortcut](https://www.icloud.com/shortcuts/0781447519354cb393be1125e928eea0)\n\n" + \
                         "^([SOTW-bot v"+self.VERSION+"](https://github.com/jakeehall/SOTW-bot) by [JakeNation4](https://www.reddit.com/user/JakeNation4))"
         post.reply(description).mod.distinguish(how='yes', sticky=True)
 
