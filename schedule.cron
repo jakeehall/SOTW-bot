@@ -1,5 +1,7 @@
-#Main Crontab for posting once a week.
-0 18 * * 5 cd /home/jake && /usr/bin/python /home/jake/SOTW-bot
+# NOTE: Change "USER" to your username
 
-#Test Crontab, will run script once every minute.
-#0/1 * * * * cd /home/jake && /usr/bin/python /home/jake/SOTW-bot
+# Main Crontab for posting once a week.
+0 18 * * 5 cd /home/USER && /usr/bin/python /home/USER/SOTW-bot RedditBot
+
+# Test Crontab, will run script once every minute.
+#* * * * * cd /home/USER && /usr/bin/python /home/USER/SOTW-bot RedditBotTest
