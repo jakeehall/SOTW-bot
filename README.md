@@ -1,4 +1,4 @@
-# SOTW-bot [![Build status](https://travis-ci.com/jakeehall/travis-lab.svg?master)](https://travis-ci.com/jakeehall)
+# SOTW-bot [![Build status](https://travis-ci.org/jakeehall/travis-lab.svg?master)](https://travis-ci.org/jakeehall)
 SOTW-bot is a Reddit bot for selecting a random song each week and then posting it on the given Subreddit.
 
 SOTW-bot is used in the following Subreddits:
