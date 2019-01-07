@@ -25,4 +25,4 @@ class RedditBotTest:
 class TravisCI:
     historyEnabled = True # SOTW history will not be saved to database
     postingEnabled = False # SOTW will not be posted to Reddit
-    database= 'test/.test_database.db'
+    database= 'database_template.db'
