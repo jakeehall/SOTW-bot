@@ -3,18 +3,17 @@ if __name__ == "__main__":
     import importlib
     from src.Reddit import Reddit
     from src.Database import Database
-    VERSION = "1.3.0" #Version of SOTW-bot (DO NOT CHANGE)
+    VERSION = "1.4.0" # Version of SOTW-bot (DO NOT CHANGE)
 
 
-    # Set rbot settings based on CLI argument
-    fileName = "Settings"
+    # Set rbot default settings
     className = "RedditBot"
+    fileName = "Settings"
+    # Set rbot settings based on CLI argument
     if(len(sys.argv) > 1):
-        print(sys.argv[1])
         className = sys.argv[1] # Capture 2nd argument as Class to use for rbot
         if(len(sys.argv) > 2):
             fileName = sys.argv[2] # Capture 3rd argument as file name for rbot
-    print(fileName, className)
     rbot = getattr(importlib.import_module(fileName), className) # import rbot
 
 
