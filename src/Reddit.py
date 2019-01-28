@@ -20,8 +20,10 @@ class Reddit:
 
         # Create Post
         print("Creating Post")
-        #post = subreddit.submit('\"'+title+'\"', url=imgURL)
-        post = self.subreddit.submit('\"'+song.title+'\" - '+song.artist, selftext="")
+        if song.link != "None":
+            post = self.subreddit.submit('\"'+song.title+'\" - '+song.artist, url=song.link)
+        else:
+            post = self.subreddit.submit('\"'+song.title+'\" - '+song.artist, selftext="")
 
         # Post Moderation
         post.mod.distinguish(how='yes')

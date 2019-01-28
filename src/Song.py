@@ -8,3 +8,4 @@ class Song:
         self.credits = str(col[5])
         self.quote = str(col[6])
         self.track = str(col[7])
+        self.link = str(col[8])
