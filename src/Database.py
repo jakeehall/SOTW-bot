@@ -66,7 +66,7 @@ class Database:
             (str(song.songID),)
         )
         self.conn.commit()
-        print("Added to History")
+        print("Song Added to History")
 
 
     def getSongOfTheWeekNumber(self):
