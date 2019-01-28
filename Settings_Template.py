@@ -11,8 +11,6 @@ class RedditBot:
 
 # FOR DEVELOPERS ONLY!
 class RedditBotTest:
-    historyEnabled = False # SOTW history will not be saved to database
-    postingEnabled = False # SOTW will not be posted to Reddit
     client_id = ''
     client_secret = ''
     username = ''
@@ -20,8 +18,10 @@ class RedditBotTest:
     subreddit=''
     flairCSS=''
     database='database.db'
+    historyEnabled = False # SOTW history will not be saved to database
+    postingEnabled = False # SOTW will not be posted to Reddit
 
 class TravisCI:
+    database= 'database_template.db'
     historyEnabled = True # SOTW history will not be saved to database
     postingEnabled = False # SOTW will not be posted to Reddit
-    database= 'database_template.db'
