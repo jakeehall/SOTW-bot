@@ -5,7 +5,7 @@ SOTW-bot is used in the following Subreddits:
 * [r/KidCudi](https://www.reddit.com/r/KidCudi/)
 * More coming soon!
 
-To add your subreddit to the list please contact me!
+Feel free to add your subreddit to the list!
 
 #### Notes:
 ##### Users:
