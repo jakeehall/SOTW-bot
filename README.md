@@ -1,11 +1,15 @@
 # SOTW-bot [![Build Status](https://travis-ci.org/jakeehall/SOTW-bot.svg?branch=master)](https://travis-ci.org/jakeehall/SOTW-bot)
-SOTW-bot is a Reddit bot for selecting a random song each week and then posting it on the given Subreddit. With the option to post to multiple Subreddits or manage multiple Subreddits using only one instance.
+A Reddit bot for selecting a random song each week and then posting it on the given Subreddit. SOTW-bot has options to post to multiple Subreddits or manage multiple Subreddits with a single instance.
 
-Where SOTW-bot Is Used:
+Used By:
 * [r/KidCudi](https://www.reddit.com/r/KidCudi/)
 * Feel free to add your subreddit to the list!
 
 ## Setting Up
+### Requirements
+* A Linux Instance (with an internet connection)
+* Python 2 (Tested on Python 2.7), (Python 3 support coming soon...)
+### Downloading
 Start by cloning this repo.
 Open Terminal, navigate to where you want to place the bot, and run this command:
 ```
@@ -42,8 +46,8 @@ postingEnabled = True    # [OPTIONAL] Selections will not be posted to Reddit
 
 ### Database
 "database_template.db" is also provided as a template database that can be used and renamed to "database.db" for actual use. The template has the first row of fields filled as an example, so be sure change that rows values before use. To get the bot fully up and running open the database in [SQLite Browser](https://sqlitebrowser.org) and add all of the songs you wish to select from into the Song_Index table.
-#### Note: All of the fields in Song_Index, except "Link", are required.
-The History table can be left blank as it will automatically be generated as songs are selected.
+##### Note 1: All of the fields in Song_Index, except "Link", are required.
+##### Note 2: The History table can be left blank as it will automatically be generated as songs are selected.
 
 ### Crontab
 Crontab comes with Linux and allows the scheduling of tasks for automation. This is what runs the SOTW-bot script every week, once a week.
@@ -52,7 +56,7 @@ In [schedule.cron](./schedule.cron) you will see the following format:
 ```
 0 18 * * 5 cd /home/USER && /usr/bin/python /home/USER/SOTW-bot
 ```
-This means the bot posts every week on Friday at 6pm.
+This means the bot posts every week on Friday (5) at 6pm (18).
 ##### IMPORTANT: The posting time is relative to the time zone set on the server where the script is running. For example, if your servers time is set to Eastern Time US (GMT-4) then the script will post at 6pm Eastern Time, but if the server time is set to Pacific Time US (GMT-7) then the script will post at 6pm Pacific Time US.
 ##### ALSO: Change "USER" to the username on your Linux server, you should NOT be executing this script as root.
 You're welcome to change the cron job to whatever time you prefer, but I've found that this time works well for getting the most visibility in the US. There's plenty of resources and generators for crontab so I won't explain how to use it here. Just remember if you do modify the time, make sure you keep the tail of the command the same "cd /home/USER && /usr/bin/python /home/USER/SOTW-bot".
