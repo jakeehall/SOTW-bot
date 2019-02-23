@@ -10,10 +10,13 @@ Used By:
 * A Linux Instance (with an internet connection)
 * Python 2 (Tested on Python 2.7), (Python 3 support coming soon...)
 ### Downloading
-Start by cloning this repo.
-Open Terminal, navigate to where you want to place the bot, and run this command:
+Start by cloning this repo and its dependencies.
+Open Terminal, navigate to where you want to place the bot, and run these commands:
 ```
 git clone https://github.com/jakeehall/SOTW-bot.git
+```
+```
+pip install praw
 ```
 ### Bot Info
 [Settings_Template.py](./Settings_Template.py) is where the bots information is stored. Fill out the file with the correct information, save it, and rename it to Settings.py
